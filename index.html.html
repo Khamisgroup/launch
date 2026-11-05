@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khamis Group · New identity launch, 30 November</title>
+<meta name="description" content="Join Khamis Group on 30 November as we launch our new identity and celebrate 35 years since our founding.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230E4A52'/><path d='M18 14h8v14l14-14h10L34 30l17 20H40L26 34v16h-8z' fill='%23C8A06A'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E4A52;
+    --bg-2: #0B3D44;
+    --text: #F5F6F3;
+    --soft: #BFD3D1;
+    --sand: #C8A06A;
+    --card: #F5F6F3;
+    --card-ink: #12262B;
+    --card-mute: #5D6B6E;
+    --field: #FFFFFF;
+    --field-line: #C9CFCB;
+    --error: #B3261E;
+    --ok: #1C6670;
+    --hill-1: #0A333A;
+    --hill-2: #135158;
+    --hill-3: #1F6168;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0A2E33;
+      --bg-2: #08262A;
+      --card: #142A2E;
+      --card-ink: #E8ECEA;
+      --card-mute: #9AA9AB;
+      --field: #0F2226;
+      --field-line: #2C4448;
+      --error: #F2B8B5;
+      --ok: #7CC6CA;
+      --hill-1: #061C1F;
+      --hill-2: #0B2A2E;
+      --hill-3: #103539;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A2E33; --bg-2: #08262A; --card: #142A2E; --card-ink: #E8ECEA;
+    --card-mute: #9AA9AB; --field: #0F2226; --field-line: #2C4448;
+    --error: #F2B8B5; --ok: #7CC6CA; --hill-1: #061C1F; --hill-2: #0B2A2E; --hill-3: #103539;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  h1, h2 { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; border-radius: 3px; }
+
+  .page {
+    position: relative; z-index: 1;
+    flex: 1;
+    width: min(1200px, 100% - 3rem);
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(3rem, 8vw, 6rem);
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2rem, 6vw, 6rem);
+  }
+  @media (max-width: 920px) { .page { grid-template-columns: 1fr; } }
+
+  .brand {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; gap: .7rem;
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.25rem;
+    margin-bottom: clamp(3rem, 8vw, 5.5rem);
+  }
+  .brand svg { width: 36px; height: 36px; }
+
+  /* ---------- Left: announcement ---------- */
+  .intro { align-self: start; }
+  .anniversary {
+    display: flex; align-items: flex-end; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .anniversary .num {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+    font-size: clamp(6rem, 17vw, 12rem); line-height: .78; letter-spacing: -0.06em;
+    color: var(--sand);
+  }
+  .anniversary .years {
+    font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.15; padding-bottom: .4rem; color: var(--soft);
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.02;
+    max-width: 14ch;
+  }
+  .lede { margin-top: 1.4rem; max-width: 32em; font-size: clamp(1.1rem, 1.5vw, 1.25rem); color: var(--soft); }
+
+  .event { margin: 2.2rem 0 0; display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; }
+  .event dt { font-size: .9rem; color: var(--soft); }
+  .event dd { margin: .15rem 0 0; font-weight: 600; font-size: 1.1rem; }
+
+  .countdown {
+    margin-top: 2.5rem; display: flex; gap: clamp(1.25rem, 3vw, 2.25rem);
+    padding-top: 1.5rem; border-top: 1px solid color-mix(in srgb, var(--soft) 35%, transparent);
+    max-width: 30rem;
+  }
+  .countdown div { display: grid; }
+  .countdown .v {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .countdown .l { font-size: .9rem; color: var(--soft); margin-top: .35rem; }
+  .countdown-done { margin-top: 2.5rem; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.6rem; color: var(--sand); }
+
+  /* ---------- Right: form ---------- */
+  .register {
+    align-self: start;
+    background: var(--card); color: var(--card-ink);
+    border-radius: 14px;
+    padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  }
+  @media (max-width: 920px) { .register { margin-top: 3.5rem; } }
+  .register h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); font-weight: 600; }
+  .register .sub { margin-top: .5rem; color: var(--card-mute); }
+  form { margin-top: 1.75rem; display: grid; gap: 1.1rem; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .field { display: grid; gap: .4rem; }
+  label { font-weight: 600; font-size: .95rem; }
+  .opt { font-weight: 400; color: var(--card-mute); }
+  input, select {
+    font: inherit; color: var(--card-ink);
+    background: var(--field);
+    border: 1.5px solid var(--field-line); border-radius: 8px;
+    padding: .75rem .85rem; width: 100%;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--sand); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sand) 30%, transparent); }
+  .field.invalid input { border-color: var(--error); }
+  .err { color: var(--error); font-size: .88rem; min-height: 0; }
+  .err:empty { display: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button[type="submit"] {
+    margin-top: .4rem;
+    font: inherit; font-weight: 600; font-size: 1.05rem;
+    background: var(--bg); color: #F5F6F3;
+    border: none; border-radius: 999px; padding: 1rem 1.5rem; cursor: pointer;
+  }
+  button[type="submit"]:hover { background: var(--hill-1); }
+  button[type="submit"][disabled] { opacity: .6; cursor: progress; }
+  .privacy { font-size: .85rem; color: var(--card-mute); }
+  .form-status { font-size: .95rem; }
+  .form-status.error { color: var(--error); }
+  .thanks { display: none; padding: 1rem 0 .5rem; }
+  .thanks h2 { color: var(--ok); }
+  .thanks p { margin-top: .75rem; color: var(--card-mute); }
+  .register.done form { display: none; }
+  .register.done .thanks { display: block; }
+  .register.done .intro-copy { display: none; }
+
+  /* ---------- Horizon ---------- */
+  .horizon { position: fixed; left: 0; right: 0; bottom: 0; width: 100%; height: 34vh; z-index: 0; pointer-events: none; }
+  .horizon .contour { fill: none; stroke: var(--sand); stroke-width: 1.2; opacity: .45; }
+  @media (prefers-reduced-motion: no-preference) {
+    .horizon .ridge { animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
+    .horizon .r2 { animation-delay: .12s; }
+    .horizon .r3 { animation-delay: .24s; }
+    .horizon .contour { stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: draw 2.6s ease-out .8s forwards; }
+  }
+  @keyframes rise { from { transform: translateY(40%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  footer {
+    position: relative; z-index: 1;
+    width: min(1200px, 100% - 3rem); margin: 0 auto;
+    padding: 1.5rem 0 2rem; font-size: .9rem; color: var(--soft);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+  }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<svg class="horizon" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+  <path class="ridge r1" fill="var(--bg-2)" d="M0 150 L140 90 L250 130 L390 50 L520 120 L640 80 L780 140 L900 70 L1040 130 L1180 60 L1310 110 L1440 80 L1440 300 L0 300Z"/>
+  <path class="ridge r2" fill="var(--hill-2)" d="M0 210 C180 180 300 200 460 185 C620 170 760 210 920 195 C1080 180 1240 205 1440 188 L1440 300 L0 300Z"/>
+  <path class="ridge r3" fill="var(--hill-1)" d="M0 255 C220 240 420 260 640 247 C860 235 1080 255 1440 243 L1440 300 L0 300Z"/>
+  <path class="contour" d="M0 198 C200 172 330 194 480 178 C640 162 780 202 940 188 C1100 174 1250 198 1440 180"/>
+  <path class="contour" d="M0 235 C210 217 400 239 630 225 C850 213 1070 235 1440 221"/>
+</svg>
+
+<main class="page">
+  <div class="brand">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#F5F6F3"/><path d="M18 14h8v14l14-14h10L34 30l17 20H40L26 34v16h-8z" fill="#0E4A52"/></svg>
+    Khamis Group
+  </div>
+
+  <!-- Announcement -->
+  <section class="intro" aria-labelledby="headline">
+    <div class="anniversary" aria-hidden="true">
+      <span class="num">35</span>
+      <span class="years">years since<br>our founding</span>
+    </div>
+    <h1 id="headline">A new Khamis Group is on its way.</h1>
+    <p class="lede">Our website is being rebuilt. Join us on 30 November as we unveil our new identity and celebrate 35 years of building together.</p>
+
+    <dl class="event">
+      <div><dt>Date</dt><dd>Monday, 30 November 2026</dd></div>
+      <div><dt>Time</dt><dd>7:00 pm</dd></div>
+      <div><dt>Venue</dt><dd>Amwaj Ballroom</dd></div>
+    </dl>
+
+    <div class="countdown" id="countdown" role="timer" aria-label="Time until the launch">
+      <div><span class="v" id="cd-days">00</span><span class="l">days</span></div>
+      <div><span class="v" id="cd-hours">00</span><span class="l">hours</span></div>
+      <div><span class="v" id="cd-mins">00</span><span class="l">minutes</span></div>
+      <div><span class="v" id="cd-secs">00</span><span class="l">seconds</span></div>
+    </div>
+    <p class="countdown-done" id="countdown-done" hidden>We’ve launched. Thank you for celebrating with us.</p>
+  </section>
+
+  <!-- Registration -->
+  <section class="register" id="register" aria-labelledby="register-title">
+    <div class="intro-copy">
+      <h2 id="register-title">Register to attend</h2>
+      <p class="sub">Reserve your place at the launch and we’ll send you the details.</p>
+    </div>
+
+    <!-- Registrations are sent by email to the address set in REGISTER_EMAIL at the bottom of this file. -->
+    <form id="reg-form" novalidate>
+
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <span class="err" id="name-err"></span>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <span class="err" id="email-err"></span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="opt">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="org">Company or organisation <span class="opt">(optional)</span></label>
+          <input id="org" name="organisation" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="guests">Number of guests</label>
+          <select id="guests" name="guests">
+            <option value="1">Just me</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn">Register by email</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="privacy">We’ll only use your details to send you information about this event.</p>
+    </form>
+
+    <div class="thanks" id="thanks" tabindex="-1">
+      <h2>One last step.</h2>
+      <p>Your email app has opened with your registration filled in. Press Send to confirm your place, and we’ll email you the event details before 30 November.</p>
+      <p>If nothing opened, email your details to <a href="mailto:info@khamisgroups.com">info@khamisgroups.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Khamis Group</span>
+  <a href="mailto:info@khamisgroups.com">info@khamisgroups.com</a>
+</footer>
+
+<script>
+  /* ---------- Countdown ----------
+     Set the launch time here. Add your time zone offset for accuracy,
+     e.g. "2026-11-30T19:00:00+04:00". Without an offset it uses each visitor's local time. */
+  const LAUNCH = new Date("2026-11-30T19:00:00");
+
+  const el = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2, "0");
+  function tick() {
+    const diff = LAUNCH - new Date();
+    if (diff <= 0) {
+      el("countdown").hidden = true;
+      el("countdown-done").hidden = false;
+      return false;
+    }
+    const s = Math.floor(diff / 1000);
+    el("cd-days").textContent = pad(Math.floor(s / 86400));
+    el("cd-hours").textContent = pad(Math.floor(s % 86400 / 3600));
+    el("cd-mins").textContent = pad(Math.floor(s % 3600 / 60));
+    el("cd-secs").textContent = pad(s % 60);
+    return true;
+  }
+  if (tick()) { const t = setInterval(() => { if (!tick()) clearInterval(t); }, 1000); }
+  el("year").textContent = new Date().getFullYear();
+
+  /* ---------- Registration form ---------- */
+  const form = el("reg-form");
+  const status = el("form-status");
+  const btn = el("submit-btn");
+
+  function setError(id, msg) {
+    el(id + "-err").textContent = msg;
+    el(id).closest(".field").classList.toggle("invalid", !!msg);
+    el(id).setAttribute("aria-invalid", msg ? "true" : "false");
+  }
+  function validate() {
+    let ok = true;
+    const name = el("name").value.trim();
+    const email = el("email").value.trim();
+    if (!name) { setError("name", "Enter your full name."); ok = false; } else setError("name", "");
+    if (!email) { setError("email", "Enter your email address."); ok = false; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError("email", "Enter an email like name@example.com."); ok = false; }
+    else setError("email", "");
+    return ok;
+  }
+  ["name", "email"].forEach(id => el(id).addEventListener("blur", () => { if (el(id).value) validate(); }));
+
+  /* Where registrations go. Change this address if needed. */
+  const REGISTER_EMAIL = "info@khamisgroups.com";
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    status.textContent = ""; status.className = "form-status";
+    if (!validate()) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+
+    const v = id => el(id).value.trim() || "Not given";
+    const body =
+      "Please register me for the Khamis Group launch on 30 November.\n\n" +
+      "Full name: " + v("name") + "\n" +
+      "Email: " + v("email") + "\n" +
+      "Phone: " + v("phone") + "\n" +
+      "Company or organisation: " + v("org") + "\n" +
+      "Guests: " + el("guests").options[el("guests").selectedIndex].text + "\n";
+
+    window.location.href = "mailto:" + REGISTER_EMAIL +
+      "?subject=" + encodeURIComponent("Registration: Khamis Group launch, " + v("name")) +
+      "&body=" + encodeURIComponent(body);
+
+    el("register").classList.add("done");
+    el("thanks").focus();
+  });
+</script>
+</body>
+</html>
